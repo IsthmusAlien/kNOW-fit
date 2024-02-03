@@ -105,9 +105,9 @@
                                 Create An Account
                             </h2>
                         </span>
-                        <input class="main_register_input_text" type="text" placeholder="Username" name="user">
-                        <input class="main_register_input_text" type="text" placeholder="Email" name="email">
-                        <input class="main_register_input_text" type="password" placeholder="Password" name="password">
+                        <input class="main_register_input_text" type="text" placeholder="Username" name="user" required oninvalid="this.setCustomValidity('Please enter username')" oninput="this.setCustomValidity('')">
+                        <input class="main_register_input_text" type="text" placeholder="Email" name="email" required oninvalid="this.setCustomValidity('Please enter email')" oninput="this.setCustomValidity('')">
+                        <input class="main_register_input_text" type="password" placeholder="Password" name="password" required oninvalid="this.setCustomValidity('Please enter password')" oninput="this.setCustomValidity('')">
                         <span class="main_register_filter flexer">
                             <h4 class="text_correction"><strong>Join as</strong></h4>
                             <span class="flexer">
