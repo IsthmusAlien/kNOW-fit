@@ -90,7 +90,7 @@
             </header>
         </div>
         <main>
-            <form action="">
+            <form action="process-sign_in.php" method="post">
                 <div class="main_box">
                     <div class="main_animation_des_tab">
                         <video autoplay loop muted class="main_vid">
@@ -105,12 +105,12 @@
                                 Login To Your Account
                             </h2>
                         </span>
-                        <input class="main_register_input_text" type="text" placeholder="Username">
-                        <input class="main_register_input_text" type="text" placeholder="Email">
-                        <input class="main_register_input_text" type="text" placeholder="Password">
+                        <span id="username_password_truespan" class="truespan"></span>
+                        <input id="username" class="main_register_input_text" type="text" placeholder="Username" name="username" required oninvalid="this.setCustomValidity('Please enter username')" oninput="this.setCustomValidity('')">
+                        <input id="password" class="main_register_input_text" type="password" placeholder="Password" name="password" required oninvalid="this.setCustomValidity('Please enter password')" oninput="this.setCustomValidity('')">
                         <span>
                             <div class="main_register_button">
-                                <button tabindex="-1">
+                                <button id="sign_in_button" onmouseenter="check_true()" onmouseleave="blank()" tabindex="-1">
                                     <span class="button_text"><a href=""><h3>Sign In</h3></a></span>
                                 </button>
                             </div>
@@ -142,5 +142,6 @@
         </div>
     </div>
   </body>
-  <script src="js/dropdown_global.js"></script>  
+  <script src="js/dropdown_global.js"></script> 
+  <script src="js/true_sign_in.js"></script> 
 </html>

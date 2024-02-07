@@ -105,8 +105,10 @@
                                 Create An Account
                             </h2>
                         </span>
-                        <input class="main_register_input_text" type="text" placeholder="Username" name="user" required oninvalid="this.setCustomValidity('Please enter username')" oninput="this.setCustomValidity('')">
-                        <input class="main_register_input_text" type="text" placeholder="Email" name="email" required oninvalid="this.setCustomValidity('Please enter email')" oninput="this.setCustomValidity('')">
+                        <span id="username_availibityspan" class="availibityspan"></span>
+                        <input id="username" class="main_register_input_text" type="text" placeholder="Username" name="username" required oninvalid="this.setCustomValidity('Please enter username')" oninput="this.setCustomValidity('')">
+                        <span id="email_availibityspan" class="availibityspan"></span>
+                        <input id="email" class="main_register_input_text" type="text" placeholder="Email" name="email" required oninvalid="this.setCustomValidity('Please enter email')" oninput="this.setCustomValidity('')">
                         <input class="main_register_input_text" type="password" placeholder="Password" name="password" required oninvalid="this.setCustomValidity('Please enter password')" oninput="this.setCustomValidity('')">
                         <span class="main_register_filter flexer">
                             <h4 class="text_correction"><strong>Join as</strong></h4>
@@ -175,4 +177,5 @@
   <script src="js/dropdown_global.js"></script>  
   <script src="js/popup_register.js"></script>  
   <script src="js/checkbox_register.js"></script>  
+  <script src="js/availibility_register.js"></script>
 </html>
