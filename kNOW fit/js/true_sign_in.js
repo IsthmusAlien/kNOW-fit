@@ -6,7 +6,9 @@ function disableClick(event) {
 function check_true(){
     var username = document.getElementById("username").value;
     var password = document.getElementById("password").value;
+    if(username != "" && password != ""){
     checkUsernamePasswordValidity(username, password);
+    }
 }
 
 function blank(){

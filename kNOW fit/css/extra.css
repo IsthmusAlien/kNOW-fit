@@ -13,6 +13,9 @@ body{
 
 main {
     flex: 1;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
 }
 
 @media only screen and (max-width: 720px){ 
@@ -29,6 +32,15 @@ main {
         background: #000;
         display: flex;
         justify-content: center;
+    }
+
+    .main_founders_des_tab{
+        display: none;
+    }
+    .main_founders_mob{
+        justify-content: center;
+        height: 100%;
+        width: 30%;
     }
 
     .footer_box_des_tab{
@@ -61,6 +73,17 @@ main {
         margin-bottom: 2%;
     }
 
+    .main_founders_mob{
+        display: none;
+    }
+    .main_founders_des_tab{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 90%;
+        height: 70%;
+    }
+    
     .footer_box_mob{
         display: none;
     }
@@ -92,6 +115,17 @@ main {
         border-right: 1px solid #8E8E8E;
         display: flex;
         justify-content: center;
+    }
+
+    .main_founders_mob{
+        display: none;
+    }
+    .main_founders_des_tab{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 90%;
+        height: 70%;
     }
 
     .footer_box_mob{

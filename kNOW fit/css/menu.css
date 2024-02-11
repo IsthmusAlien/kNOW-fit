@@ -1,0 +1,336 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+1p:wght@800&display=swap');
+
+body{
+    margin: 0%;
+}
+
+main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+@media only screen and (max-width: 720px){ 
+
+    .main_founders_des_tab{
+        display: none;
+    }
+    .main_founders_mob{
+        justify-content: center;
+        height: 100%;
+        width: 30%;
+    }
+
+}
+
+@media only screen and (min-width: 720px) and (max-width: 1080px){
+
+    .main_founders_mob{
+        display: none;
+    }
+    .main_founders_des_tab{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 90%;
+        height: 70%;
+    }
+
+}
+
+@media only screen and (min-width: 1080px){
+
+    .main_founders_mob{
+        display: none;
+    }
+    .main_founders_des_tab{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 90%;
+        height: 70%;
+    }
+
+}
+
+.flexer{
+    display: flex;
+}
+
+.list_cleaner{
+    display: flex;
+    margin: 0%;
+    padding: 0%;
+}
+
+.straighter{
+    display: flex;
+    justify-content: center;
+}
+
+.main_total_des_tab{
+    height: auto;
+    width: auto;
+    display: flex;
+    justify-content: center;
+}
+
+.main_selection_part_des_tab{
+    width: 19.75vw;
+    height: 97.5625vh;
+    flex-shrink: 0;
+    border-radius: 25px;
+    border: 1px solid #8E8E8E;
+    background: #FFF;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.main_view_part_des_tab{
+    margin-left: 0.45vw;
+    width: 78.75vw;
+    height: 97.5625vh;
+    flex-shrink: 0;
+    border-radius: 25px;
+    border: 1px solid #8E8E8E;
+    background: #FFF;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.main_scroll{
+    height: 98%;
+    width: 95%;
+    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+    scrollbar-width: none;  /* Firefox */
+    overflow-y: scroll;
+}
+
+.main_scroll::-webkit-scrollbar { 
+    display: none;  /* Safari and Chrome */
+}
+
+.main_view_part_des_tab div{
+    width: 97%;
+}
+
+.main_view_profile_part_des_tab{
+    margin-top: 1%;
+    height: 9%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main_view_profile_part_des_tab div{
+    height: 100%;
+    width: 50%;
+}
+
+.main_bookmarks_part_des_tab{
+    display: flex;
+    justify-content: left;
+}
+
+.main_bookmarks_part_des_tab span{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main_profile_picture_part_des_tab{
+    display: flex;
+    justify-content: right;
+}
+
+.main_profile_picture_part_des_tab span{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main_profile_picture_close_des_tab,.main_profile_picture_open_des_tab{
+    border-radius: 5%;
+    height: 4vh;
+    width: 4vh;
+    background-color: #FFF;
+}
+
+.main_bookmark_des_tab,.main_bookmarked_des_tab{
+    height: 4.5vh;
+    width: 4.5vh;
+}
+
+@keyframes scaleAnimation {
+    0% {
+      transform: scale(1);
+    }
+    100% {
+      transform: scale(1.2);
+    }
+  }
+  
+  @keyframes scaleAnimationReverse {
+    0% {
+      transform: scale(1.2);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+
+.main_bookmarked_des_tab:hover{
+    opacity: 1;
+}
+
+.main_view_main_part_des_tab{
+    margin-top: 1%;
+    height: 85.5%;
+    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+    scrollbar-width: none;  /* Firefox */
+    overflow-y: scroll;
+}
+
+.main_view_main_part_des_tab::-webkit-scrollbar { 
+    display: none;  /* Safari and Chrome */
+}
+
+.main_view_content_des_tab{
+    margin-top: 1%;
+    height: auto;
+    width: 98%;
+    border-radius: 25px;
+    border: 1px solid #8E8E8E;
+    background: #FFF;
+    margin: auto;
+    margin-top: 1%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.main_view_content_title{
+    font-size: 250%;
+    align-self: flex-start;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    flex-shrink: 0;
+    margin-top: 1%;
+    margin-bottom: 1%;
+    margin-left: 3%;
+    width: 94%;
+    word-wrap: break-word;
+}
+
+.main_view_content_text{
+    font-size: 100%;
+    align-self: flex-start;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    flex-shrink: 0;
+    margin-top: 1%;
+    margin-bottom: 1%;
+    margin-left: 3.2%;
+    width: 94%;
+    word-wrap: break-word;
+}
+
+.main_view_content_image{
+    margin-top: 1%;
+    margin-bottom: 1%;
+    width: 70vmax;
+    height: auto;
+    object-fit: contain;
+    border-radius: 25px;
+}
+.main_view_content_video{
+    margin-top: 1%;
+    margin-bottom: 1%;
+    width: 70vmax;
+    height: auto;
+    object-fit: contain;
+    border-radius: 25px;
+}
+
+.main_view_content_reaction{
+    margin-top: 1%;
+    margin-bottom: 1%;
+    margin-left: 3.5%;
+    display: flex;
+    justify-items: start;
+}
+
+.content_span{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.content_span ~ .content_span{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 5%;
+}
+
+.content_span:last-child {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 72.5%;
+}
+
+.content_span h2{
+    font-size: 110%;
+    font-family: "M Plus 1p", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    flex-shrink: 0;
+    width: auto;
+    margin-left: 10%;
+}
+
+
+.content_controls{
+    width: 3vh;
+    height: 3vh;
+}
+
+.main_scroll_content_des_tab{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    border-radius: 10px;
+    background: #FFF;
+    margin-top: 2%;
+    height: 15%;
+    width: 98%;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.main_scroll_picture_des_tab {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.main_scroll_content_des_tab:hover .main_scroll_picture_des_tab {
+    transform: scale(1.1);
+}
+
+.main_scroll_content_des_tab:focus .main_scroll_picture_des_tab {
+    transform: scale(1.1);
+}

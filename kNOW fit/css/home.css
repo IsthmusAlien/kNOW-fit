@@ -340,6 +340,7 @@ main {
     background-repeat: no-repeat;
     margin-left: 16vw;
     margin-top: 4.25vh;
+    transition: margin-top 0.2s ease, box-shadow 0.2s ease; 
 }
 
 .header_buttons_des ~ .header_buttons_des {
@@ -357,6 +358,7 @@ main {
     margin-left: 1.87vw;
     margin-top: 4.25vh;
     margin-right: 1vw;
+    transition: margin-top 0.2s ease, box-shadow 0.2s ease;  
     }
 
 .button_centerer{
