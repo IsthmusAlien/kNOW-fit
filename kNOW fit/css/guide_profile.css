@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+1p:wght@800&display=swap');
+
+body{
+    margin: 0%;
+}
+
+main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+}
+
+@media only screen and (max-width: 720px){ 
+
+
+
+}
+
+@media only screen and (min-width: 720px) and (max-width: 1080px){
+
+
+
+}
+
+@media only screen and (min-width: 1080px){
+
+
+
+}
+
+.flexer{
+    display: flex;
+}
+
+.list_cleaner{
+    display: flex;
+    margin: 0%;
+    padding: 0%;
+}
+
+.straighter{
+    display: flex;
+    justify-content: center;
+}
+
+.main_total_des_tab{
+    height: 97.5625vh;
+    width: 99.1vw;
+    flex-shrink: 0;
+    border-radius: 25px;
+    border: 1px solid #8E8E8E;
+    background: #FFF;
+}
+
+.main_basic_info_des_tab{
+    width: 97%;
+    height: 25%;
+    display: flex;
+    margin-top: 0.15%;
+}
+
+.main_image_part_des_tab{
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+
+.main_profile_picture_des_tab{
+    width: calc(50vmax - 20vw);
+    height: auto;
+    border-radius: 10px;
+    object-fit: cover;
+}

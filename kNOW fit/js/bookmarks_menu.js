@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function() {
-    var bookmarkDesTab = document.querySelector('.main_profile_picture_close_des_tab');
-    var bookmarkedDesTab = document.querySelector('.main_profile_picture_open_des_tab');
+    var bookmarkDesTab = document.getElementById('bookmark_close_des');
+    var bookmarkedDesTab = document.getElementById('bookmark_open_des');
   
     bookmarkDesTab.addEventListener("mouseover", function() {
       bookmarkDesTab.style.display = "none";
@@ -15,5 +15,18 @@ document.addEventListener("DOMContentLoaded", function() {
         bookmarkDesTab.style.display = "inline-block";
       }, 200);
     });
+
+    var bookmarkMob = document.getElementById('bookmark_close_mob');
+    var bookmarkedMob = document.getElementById('bookmark_open_mob');
+
+    bookmarkMob.addEventListener("click", function() {
+      bookmarkMob.style.display = "none";
+      bookmarkedMob.style.display = "inline-block";
+    });
+  
+    bookmarkedMob.addEventListener("click", function() {
+      bookmarkedMob.style.display = "none";
+      bookmarkMob.style.display = "inline-block";
+    })
   });
   
