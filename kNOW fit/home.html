@@ -5,7 +5,61 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>kNOW fit</title>
     <link rel="stylesheet" href="css/home.css">
-    <link rel="icon" sizes="180x180" href="imgs/tab_logo.png" type="image/png"> 
+    <link rel="icon" sizes="180x180" href="imgs/tab_logo.png" type="image/png">
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function() {
+            function getCookie(name) {
+                const cookies = document.cookie.split(';');
+                for (let i = 0; i < cookies.length; i++) {
+                    let cookie = cookies[i].trim();
+                    if (cookie.startsWith(name + '=')) {
+                        return decodeURIComponent(cookie.substring(name.length + 1));
+                    }
+                }
+                return null;
+            }
+
+            const userData = getCookie('userData');
+            if (userData) {
+                try {
+                    const userDataObj = JSON.parse(userData);
+                    const userRemember = parseInt(userDataObj.user_remember);
+                    if (userRemember == 1) {
+                        valid();
+                    }
+                } catch (error) {
+                    console.error('Error parsing JSON:', error);
+                }
+            } else {
+                console.log('No user data found in the cookie.');
+            }
+            
+            function valid () {
+                var btn_mob = document.getElementById('valid_display_mob');
+                btn_mob.style.display = "none";
+                var btn_tab = document.getElementById('valid_display_tab');
+                btn_tab.style.display = "none";
+                var drop_bar = document.querySelector('.header_dropdown_tab');
+                drop_bar.style.height = "20.28vh";
+                var btn_des = document.getElementById('valid_display_des');
+                btn_des.style.display = "none";
+
+                var txt_mob = document.getElementById('valid_text_mob');
+                txt_mob.innerText = "Home";
+                var txt_tab = document.getElementById('valid_text_tab');
+                txt_tab.innerText = "Home";
+                var txt_des = document.getElementById('valid_text_des');
+                txt_des.innerText = "Home";
+
+                var link_mob = document.getElementById('valid_link_mob');
+                link_mob.href = "menu.php";
+                var link_tab = document.getElementById('valid_link_tab');
+                link_tab.href = "menu.php";
+                var link_des = document.getElementById('valid_link_des');
+                link_des.href = "menu.php";
+            }
+        });
+    </script> 
   </head>
   <body>
     <div class="fitter">
@@ -20,13 +74,13 @@
                         </button>
                         <ul class="list_cleaner">
                             <div class="header_buttons_mob">
-                                <a href="register.html">
+                                <a id="valid_link_mob" href="register.html">
                                     <button class="button_centerer">
-                                        <span class="button_text"><h4>Register</h4></span>
+                                        <span class="button_text"><h4 id="valid_text_mob">Register</h4></span>
                                     </button>
                                 </a>
                             </div>
-                            <div class="header_buttons_mob">
+                            <div id="valid_display_mob" class="header_buttons_mob">
                                 <a href="sign_in.html">
                                     <button class="button_centerer">
                                         <span class="button_text"><h4>Sign In</h4></span>
@@ -52,8 +106,8 @@
                         </span>
                     </button>
                     <div class="header_dropdown_tab" style="display: none;">
-                    <a class="header_links_tab" href="sign_in.html" tabindex="-1"><h5 class="header_texts">Sign In</h5></a>
-                    <a class="header_links_tab" href="register.html" tabindex="-1"><h5 class="header_texts">Register</h5></a>
+                    <a id="valid_display_tab" class="header_links_tab" href="sign_in.html" tabindex="-1"><h5 class="header_texts">Sign In</h5></a>
+                    <a id="valid_link_tab" class="header_links_tab" href="register.html" tabindex="-1"><h5 id="valid_text_tab" class="header_texts">Register</h5></a>
                     <a class="header_links_tab" href="/Loose Weight" tabindex="-1"><h5 class="header_texts">Loose Weight</h5></a>
                     <a class="header_links_tab" href="/Get Active" tabindex="-1"><h5 class="header_texts">Get Active</h5></a>
                     <a class="header_links_tab" href="/Improve Lifestyle" tabindex="-1"v><h5 class="header_texts">Improve Lifestyle</h5></a>
@@ -72,13 +126,13 @@
                     </div>
                     <div class="flexer">
                         <div class="header_buttons_des">
-                            <a href="register.html" tabindex="-1">
+                            <a id="valid_link_des" href="register.html" tabindex="-1">
                                 <button class="button_centerer" tabindex="-1">
-                                    <span class="button_text"><h3>Register</h3></span>
+                                    <span class="button_text"><h3 id="valid_text_des">Register</h3></span>
                                 </button>
                             </a>
                         </div>
-                        <div class="header_buttons_des">
+                        <div id="valid_display_des" class="header_buttons_des">
                             <a href="sign_in.html" tabindex="-1">
                                 <button class="button_centerer" tabindex="-1">
                                     <span class="button_text"><h3>Sign In</h3></span>

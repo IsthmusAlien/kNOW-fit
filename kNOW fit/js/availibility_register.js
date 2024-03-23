@@ -1,3 +1,7 @@
+document.addEventListener('DOMContentLoaded', init, false);
+function init(){
+var btn2 = document.getElementById("register_button");
+
 function disableClick(event) {
     event.preventDefault();
     event.stopPropagation();
@@ -13,18 +17,13 @@ document.getElementById('username').addEventListener('input', function() {
 });
 
 function checkUsernameAvailability(username) {
-    var btn2 = document.getElementById("register_button");
     var xhr = new XMLHttpRequest();
     xhr.open('POST', 'process_username_availibilty.php', true);
     xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
     xhr.onreadystatechange = function() {
         if (xhr.readyState == 4 && xhr.status == 200) {
             document.getElementById('username_availibityspan').innerHTML = xhr.responseText;
-            if (xhr.responseText == "<span>Username not available</span>"){
-                btn2.addEventListener("click", disableClick);
-            } else{
-                btn2.removeEventListener("click", disableClick);
-            }
+            updateButtonStatus();
         }
     };
     xhr.send('username=' + username);
@@ -40,19 +39,27 @@ document.getElementById('email').addEventListener('input', function() {
 });
 
 function checkEmailAvailability(email) {
-    var btn2 = document.getElementById("register_button");
     var xhr = new XMLHttpRequest();
     xhr.open('POST', 'process_email_availibilty.php', true);
     xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
     xhr.onreadystatechange = function() {
         if (xhr.readyState == 4 && xhr.status == 200) {
             document.getElementById('email_availibityspan').innerHTML = xhr.responseText;
-            if (xhr.responseText == "<span>Email already in use</span>"){
-                btn2.addEventListener("click", disableClick);
-            } else{
-                btn2.removeEventListener("click", disableClick);
-            }
+            updateButtonStatus();
         }
     };
     xhr.send('email=' + email);
 }
+
+function updateButtonStatus() {
+    var usernameAvailability = document.getElementById('username_availibityspan').innerHTML;
+    var emailAvailability = document.getElementById('email_availibityspan').innerHTML;
+    
+    if (usernameAvailability === "<span>Username not available</span>" || 
+        emailAvailability === "<span>Email already in use</span>") {
+        btn2.addEventListener("click", disableClick);
+    } else {
+        btn2.removeEventListener("click", disableClick);
+    }
+}
+};

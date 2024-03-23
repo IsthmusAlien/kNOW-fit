@@ -1,25 +1,41 @@
 <?php
 
-$host = "localhost";
-$dbname = "main_db";
-$user = "root";
-$pass = "";
+$host = "db4free.net";
+$dbname = "main_db51";
+$user = "tester51";
+$pass = "opv20useless";
+$port = 3306;
 
-$conn = mysqli_connect(hostname: $host,
-                        username: $user,
-                        password: $pass,
-                        database: $dbname);
+$conn = new mysqli($host, $user, $pass, $dbname, $port);
 
-if(mysqli_connect_errno()){
-    die("Connection error: " . mysqli_connect_error());
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
 }
 
 $username = $_POST['username'];
 $password = $_POST['password'];
 
-$result = mysqli_query($conn, "SELECT * FROM local_backup WHERE username='$username' AND password='$password'");
+$result = mysqli_query($conn, "SELECT password FROM local_backup WHERE username='$username'");
 
-if (mysqli_num_rows($result) == 0) {
+if (mysqli_num_rows($result) != 0) {
+
+    $row = mysqli_fetch_assoc($result);
+        
+    $hash = $row['password'];
+    
+    if (password_verify($password, $hash)) {
+
+        echo '';
+        
+    } else {
+
+        echo '<span>Incorrect Password</span>';
+
+    }
+
+} else {
+
     echo '<span>Incorrect Username or Password</span>';
+
 }
 ?>
