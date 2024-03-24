@@ -57,6 +57,7 @@ main {
         display: flex;
         align-items: center;
         flex-direction: column;
+        pointer-events: all; 
     }
 
     
@@ -78,7 +79,7 @@ main {
       }
       
       .temp_screen video{
-        margin-top: 5%;
+        margin-top: 25%;
         width: 50vh;
         height: 50vh;  
       }
@@ -142,6 +143,7 @@ main {
         display: flex;
         align-items: center;
         flex-direction: column;
+        pointer-events: all; 
     }
 
     .main_view_content_title{

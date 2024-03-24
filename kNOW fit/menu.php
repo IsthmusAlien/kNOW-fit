@@ -72,7 +72,7 @@
                 
                     $result1 = $stmt1->fetchAll(PDO::FETCH_ASSOC);
 
-                    if ($result1 !== false) {
+                    if (count($result1) != 0) {
                       $CTvalid = 1;
                     }
                 
@@ -267,7 +267,7 @@
                 
                     $result1 = $stmt1->fetchAll(PDO::FETCH_ASSOC);
 
-                    if ($result1 !== false) {
+                    if (count($result1) != 0) {
                       $CTvalid = 1;
                     }
                 
@@ -334,18 +334,6 @@
                 } 
               } else {
             ?>
-          <div class="main_view_profile_part">
-            <div class="main_bookmarks_part">
-              <span>
-              </span>
-            </div>
-            <div class="main_profile_picture_part">
-              <span>
-                <img class="main_profile_picture_close_des_tab m_c_dt" src="imgs/manage_close.png" alt="Profile_Picture">
-                <img class="main_profile_picture_open_des_tab m_o_dt" src="imgs/manage_open.png" alt="Profile_Picture" style="display: none;">
-              </span>
-            </div>
-          </div>
           <div class="main_view_main_part_des_tab" style="display:flex; align-items: center; flex-direction: column;">
             <div class="temp_screen">
                     <video autoplay loop muted class="main_subscriber_vid">

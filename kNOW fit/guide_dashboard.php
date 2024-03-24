@@ -31,12 +31,10 @@ try {
 
   $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-  if ($result === false) {
-    echo json_encode(['error' => 'Failed to retrieve data']);
+  if (count($result) == 0) {
     $valid = 0;
   } else {
-
-  $valid = 1;
+    $valid = 1;
   }
 
 
@@ -86,7 +84,7 @@ try {
             </span>
             <div class="odpost">
               <?php
-                if ($valid == 0) {
+                if ($valid == 1) {
                   foreach ($result as $row) {
                       $checkimg = "guidedata/".$username."/post_imgs/". $row['id'].".jpg";
                     ?>

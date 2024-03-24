@@ -102,7 +102,8 @@ if((int)$_FILES["profile_image"]["error"] != 4) {
 
         if(move_uploaded_file($_FILES["profile_image"]["tmp_name"], $uploadFile)) {
 
-            echo "Image uploaded successfully.";
+            header("Location: http://localhost/kNOW-fit/kNOW%20fit/guide_dashboard.php", true, 301);  
+            exit(); 
 
         } else {
 
