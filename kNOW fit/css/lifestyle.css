@@ -1,0 +1,151 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+1p:wght@800&display=swap');
+
+body{
+    margin: 0%;
+}
+
+.fitter{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.flexer{
+    display: flex;
+}
+
+main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    background-image: url("bg/lifestyle.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+@media only screen and (max-width: 720px){ 
+
+    main{
+        height: 63.5625%;
+    }
+
+    .footer_box_des_tab{
+        display: none;
+    }
+    .footer_box_mob{
+        height: 36.4375%;
+        flex-shrink: 0;
+        background: #000;
+        display: flex;
+        justify-content: center;
+    }
+
+}
+
+@media only screen and (min-width: 720px){
+
+    main{
+        height: 90.15vh;
+    }
+
+    .footer_box_mob{
+        display: none;
+    }
+    .footer_box_des_tab{
+        flex-shrink: 0;
+        height: 9.85vh;
+        background: #000;
+        display: flex;
+        justify-content: center;
+    }
+
+}
+
+main h2{
+    font-size: 200%;
+    text-align: center;
+    font-family: "M Plus 1p", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    flex-shrink: 0;
+    color: white;
+    max-width: 80%;
+}
+
+main p{
+    font-size: 100%;
+    text-align: center;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    flex-shrink: 0;
+    color: white;
+    max-width: 80%;
+}
+
+.footer_logo_img_mob{
+    width: 27.1625vh;
+    height: 19.875vh;
+    flex-shrink: 0;
+    object-fit: contain;
+    margin-top: 2.25vh;
+}
+
+.footer_logo_img_des_tab{
+    width: 11.5275vh;
+    height: 6.625vh;
+    flex-shrink: 0;
+    object-fit: contain;
+    margin-top: 1.5vh;
+}
+
+.divider{
+    width: 78.75vw;
+    height: 1px;
+    background: #8E8E8E;
+    margin-bottom: 4vh;
+}
+
+.footer_links_des_tab{
+    text-decoration: none;
+    flex-shrink: 0;
+    margin: 0vh 0vh 0vh 66.45vw;
+    margin-top: 3vh;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: white;
+    height: 2.83vh;
+    margin-right: 1.15vw;
+}
+
+.footer_links_des_tab[tabindex]:focus{
+    color:rgb(143, 143, 143);
+    outline: none;
+}
+
+.footer_links_mob{
+    text-decoration: none;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: white;
+}
+
+.footer_texts_des_tab{
+    margin: 0%;
+    font-size: 2vh;
+}
+
+.footer_texts_mob{
+    margin: 0%;
+    font-size: 2.65vh;
+    width: 100px;
+    text-align: right;
+    margin-left: 55vw;
+}
