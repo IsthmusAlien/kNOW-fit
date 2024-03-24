@@ -40,6 +40,10 @@
             $stmt1 = $pdo->prepare("UPDATE {$username} SET interact_like = 1 WHERE interact_post_id = ?");
             $stmt1->execute([$post_id]);
 
+            
+            $stmt = $pdo->prepare("UPDATE local_searchinfo SET karma = karma + 1 WHERE username = ?");
+            $stmt->execute([$guide_username]);
+          
             $stmt0 = $pdo->prepare("UPDATE {$guide_username} SET likes = likes + 1 WHERE id = ?");
             $stmt0->execute([$post_id]);
 
@@ -47,6 +51,9 @@
 
                 $stmt1 = $pdo->prepare("UPDATE {$username} SET interact_dislike = 0 WHERE interact_post_id = ?");
                 $stmt1->execute([$post_id]);
+
+                $stmt = $pdo->prepare("UPDATE local_searchinfo SET karma = karma + 1 WHERE username = ?");
+                $stmt->execute([$guide_username]);
 
                 $stmt0 = $pdo->prepare("UPDATE {$guide_username} SET dislikes = dislikes - 1 WHERE id = ?");
                 $stmt0->execute([$post_id]);
@@ -60,6 +67,9 @@
 
             $stmt1 = $pdo->prepare("UPDATE {$username} SET interact_like = 0 WHERE interact_post_id = ?");
             $stmt1->execute([$post_id]);
+
+            $stmt = $pdo->prepare("UPDATE local_searchinfo SET karma = karma - 1 WHERE username = ?");
+            $stmt->execute([$guide_username]);
     
             $stmt0 = $pdo->prepare("UPDATE {$guide_username} SET likes = likes - 1 WHERE id = ?");
             $stmt0->execute([$post_id]);
@@ -75,6 +85,9 @@
             $stmt1 = $pdo->prepare("UPDATE {$username} SET interact_dislike = 1 WHERE interact_post_id = ?");
             $stmt1->execute([$post_id]);
 
+            $stmt = $pdo->prepare("UPDATE local_searchinfo SET karma = karma - 1 WHERE username = ?");
+            $stmt->execute([$guide_username]);
+
             $stmt0 = $pdo->prepare("UPDATE {$guide_username} SET dislikes = dislikes + 1 WHERE id = ?");
             $stmt0->execute([$post_id]);
 
@@ -82,6 +95,9 @@
 
                 $stmt1 = $pdo->prepare("UPDATE {$username} SET interact_like = 0 WHERE interact_post_id = ?");
                 $stmt1->execute([$post_id]);
+
+                $stmt = $pdo->prepare("UPDATE local_searchinfo SET karma = karma - 1 WHERE username = ?");
+                $stmt->execute([$guide_username]);
 
                 $stmt0 = $pdo->prepare("UPDATE {$guide_username} SET likes = likes - 1 WHERE id = ?");
                 $stmt0->execute([$post_id]);
@@ -94,6 +110,9 @@
 
             $stmt1 = $pdo->prepare("UPDATE {$username} SET interact_dislike = 0 WHERE interact_post_id = ?");
             $stmt1->execute([$post_id]);
+
+            $stmt = $pdo->prepare("UPDATE local_searchinfo SET karma = karma + 1 WHERE username = ?");
+            $stmt->execute([$guide_username]);
 
             $stmt0 = $pdo->prepare("UPDATE {$guide_username} SET dislikes = dislikes - 1 WHERE id = ?");
             $stmt0->execute([$post_id]);

@@ -21,6 +21,11 @@ try {
 
   $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
+  $stmt1 = $pdo->prepare("SELECT karma FROM local_searchinfo WHERE username = ?");
+  $stmt1->execute([$username]);
+
+  $result1 = $stmt1->fetch(PDO::FETCH_ASSOC);
+
   $stmt = $pdo->prepare("SELECT * FROM {$username}");
   $stmt->execute();
 
@@ -75,41 +80,53 @@ try {
           <div class="main_history">
             <span class="top-post">
               <h2 class="part_title-sp">My posts</h2>
+              <h3 class="part_title-sp2">Karma <?php echo $result1['karma']; ?></h3>
               <img id="manage_close" class="main_manage_close" src="imgs/manage_close.png" alt="Profile_Picture">
               <img id="manage_open" class="main_manage_open" src="imgs/manage_open.png" alt="Profile_Picture" style="display: none;">
             </span>
             <div class="odpost">
               <?php
-                if ($valid == 1) {
+                if ($valid == 0) {
                   foreach ($result as $row) {
+                      $checkimg = "guidedata/".$username."/post_imgs/". $row['id'].".jpg";
                     ?>
                        <div class="main_view_content">
-                          <h2 class="main_view_content_title">Title</h2>
+                          <h2 class="main_view_content_title"><?php echo $row['title']; ?></h2>
                           <h4 class="main_view_content_text">
-                            Example Text
+                            <?php echo $row['content']; ?>
                           </h4>
-                          <div class="container">
-                            <img id="image" class="main_view_content_image" src="imgs/Harsh.jpg" alt="Image">
+                          <?php 
+                            if (file_exists($checkimg)) {
+                          ?>
+                          <div class="container_od">
+                            <img id="image" class="main_view_content_image" src=<?php echo $checkimg; ?> alt="Image">
                           </div>
+                          <?php
+                            }
+                          ?>
                           <div class="main_view_content_reaction">
                             <span class="content_span">
-                              <img id="like_passive" class="content_controls" src="imgs/like_passive.png" alt="like">
-                              <img id="like_active" class="content_controls" src="imgs/like_active.png" alt="liked" style="display: none;">
-                              <h2>10</h2>
+                              <img class="content_controls" src="imgs/like_active.png" alt="liked">
+                              <h2><?php echo $row['likes'];?></h2>
                             </span>
                             <span class="content_span">
-                              <img id="dislike_passive" class="content_controls" src="imgs/dislike_passive.png" alt="like">
-                              <img id="dislike_active" class="content_controls" src="imgs/dislike_active.png" alt="liked" style="display: none;">
-                              <h2>10</h2>
-                            </span>
-                            <span class="content_span">
-                              <img id="star_passive" class="content_controls" src="imgs/star_passive.png" alt="like">
-                              <img id="star_active" class="content_controls" src="imgs/star_active.png" alt="liked" style="display: none;">
+                              <img class="content_controls" src="imgs/dislike_active.png" alt="liked">
+                              <h2><?php echo $row['dislikes'];?></h2>
                             </span>
                           </div>
                         </div>
                     <?php
                   }
+                } else {
+                  ?>
+                  <div class="temp_screen">
+                    <video autoplay loop muted class="main_subscriber_vid">
+                      <source src="vids/posting.webm" type="video/webm">
+                      Your browser does not support the video tag.
+                    </video>
+                    <h3>"Your posts will be displayed here."</h3>
+                  </div>
+                  <?php
                 }
               ?>
             </div>
@@ -128,7 +145,7 @@ try {
 
 document.addEventListener('DOMContentLoaded', function () {
   document.body.addEventListener('click', function(event) {
-    const imageContainer = event.target.closest('.container');
+    const imageContainer = event.target.closest('.container_od');
     if (imageContainer) {
       const imageSrc = event.target.getAttribute('src');
       if (imageSrc) {
@@ -208,5 +225,4 @@ document.addEventListener('DOMContentLoaded', function () {
         
   </script>
   <script src="js/component_guide_dashboard.js"></script>
-  <script src="js/popup_guide_dashboard.js"></script>
 </html>
