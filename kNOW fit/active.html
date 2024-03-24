@@ -10,7 +10,20 @@
   <body>
     <div class="fitter">
     <main>
-
+        <h2>                    
+            Starting a cardio workout routine can be beneficial for overall health and fitness.Here are 3 Biggest Tips for Beginners:
+        </h2>
+        <p>
+            Start Slowly: If you're new to Cardio Exercises, Start with Low-Impact Activities like Walking, Cycling, or Swimming. Begin with Shorter Durations and Lower Intensity Levels, gradually increasing as your Fitness Improves.
+        </p>
+        <p>
+            Stay Hydrated: Drink Water Before, During, and After your Cardio Workouts to stay Hydrated. Dehydration can Negatively Impact your Performance and Recovery.
+        </p>
+        <p>
+            Listen to Your Body: Pay Attention to how your Body Feels during Exercise. It's Normal to Feel Challenged, but if you Experience Pain or Discomfort, Stop and Rest. Pushing through Pain can lead to Injury.
+        </p>
+        <p class="text" id="loc">
+        </p>
     </main>
         <div class="footer_box_des_tab">
             <footer>
@@ -31,4 +44,57 @@
         </div>
     </div>
   </body>
+  <script>
+
+        window.addEventListener('load', function() {
+            getLocation(); 
+            setInterval(getLocation, 5000); 
+        });
+
+    var x = document.getElementById("loc");
+
+    function getLocation() {
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(showPosition, showError);
+        } else {
+            x.innerHTML = "Geolocation not supported";
+        }
+    }
+
+    function showPosition(position) {
+        var latitude = position.coords.latitude;
+        var longitude = position.coords.longitude;
+
+        var geocodingAPI = `https://nominatim.openstreetmap.org/reverse?lat=${latitude}&lon=${longitude}&format=json`;
+        
+        fetch(geocodingAPI)
+            .then(response => response.json())
+            .then(data => {
+                var city = data.address.city || data.address.town || data.address.village;
+
+                x.innerHTML = `Go for a run today! ${city} should have plenty of spots for you to test your speed.`;
+            })
+            .catch(error => {
+                console.error('Error fetching reverse geocoding data:', error);
+                x.innerHTML = `Go for a run today! Your City should have plenty of spots for you to test your speed.`;
+            });
+    }
+
+    function showError(error) {
+        switch (error.code) {
+            case error.PERMISSION_DENIED:
+            x.innerHTML = `Go for a run today! Your City should have plenty of spots for you to test your speed.`;
+                break;
+            case error.POSITION_UNAVAILABLE:
+            x.innerHTML = `Go for a run today! Your City should have plenty of spots for you to test your speed.`;
+                break;
+            case error.TIMEOUT:
+            x.innerHTML = `Go for a run today! Your City should have plenty of spots for you to test your speed.`;
+                break;
+            case error.UNKNOWN_ERROR:
+            x.innerHTML = `Go for a run today! Your City should have plenty of spots for you to test your speed.`;
+                break;
+        }
+    }
+</script> 
 </html>
