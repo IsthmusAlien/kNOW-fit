@@ -87,7 +87,7 @@ if ($type == 0) {
 
     $stmt->execute();
 
-    header("Location: http://localhost/kNOW-fit/kNOW%20fit/menu.php", true, 301);  
+    header("Location: menu.php", true, 301);  
     exit(); 
     
 } else {
@@ -127,7 +127,7 @@ if ($type == 0) {
     
     $pdo = null;
 
-    header("Location: http://localhost/kNOW-fit/kNOW%20fit/guide_profile.php", true, 301);  
+    header("Location: guide_profile.php", true, 301);  
     exit(); 
 } 
 

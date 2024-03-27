@@ -48,12 +48,12 @@ if (mysqli_num_rows($result) > 0) {
 
         if ($redirect == 0) {
 
-            header("Location: http://localhost/kNOW-fit/kNOW%20fit/menu.php", true, 301);  
+            header("Location: menu.php", true, 301);  
             exit(); 
 
         } else {
 
-            header("Location: http://localhost/kNOW-fit/kNOW%20fit/guide_dashboard.php", true, 301);  
+            header("Location: guide_dashboard.php", true, 301);  
             exit(); 
 
         }
