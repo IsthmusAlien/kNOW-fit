@@ -2,15 +2,11 @@ likepassives = document.querySelectorAll('.like_passive_des');
 likeactives = document.querySelectorAll('.like_active_des');
 dislikepassives = document.querySelectorAll('.dislike_passive_des');
 dislikeactives = document.querySelectorAll('.dislike_active_des');
-starpassives = document.querySelectorAll('.star_passive_des');
-staractives = document.querySelectorAll('.star_active_des');
 
 likepassives.forEach(function(likepassive, index) {
     var likeactive = likeactives[index];
     var dislikepassive = dislikepassives[index];
     var dislikeactive = dislikeactives[index];
-    var starpassive = starpassives[index];
-    var staractive = staractives[index];
 
     likepassive.addEventListener("click", function() {
         this.style.display = "none";
@@ -36,31 +32,17 @@ likepassives.forEach(function(likepassive, index) {
         dislikepassive.style.display = "inline-block";
     });
 
-    starpassive.addEventListener("click", function() {
-        this.style.display = "none";
-        staractive.style.display = "inline-block";
-    });
-
-    staractive.addEventListener("click", function() {
-        this.style.display = "none";
-        starpassive.style.display = "inline-block";
-    });
-
 });
 
 likepassives1 = document.querySelectorAll('.like_passive_mob');
 likeactives1 = document.querySelectorAll('.like_active_mob');
 dislikepassives1 = document.querySelectorAll('.dislike_passive_mob');
 dislikeactives1 = document.querySelectorAll('.dislike_active_mob');
-starpassives1 = document.querySelectorAll('.star_passive_mob');
-staractives1 = document.querySelectorAll('.star_active_mob');
 
 likepassives1.forEach(function(likepassive1, index) {
     var likeactive1 = likeactives1[index];
     var dislikepassive1 = dislikepassives1[index];
     var dislikeactive1 = dislikeactives1[index];
-    var starpassive1 = starpassives1[index];
-    var staractive1 = staractives1[index];
 
     likepassive1.addEventListener("click", function() {
         this.style.display = "none";
@@ -86,15 +68,6 @@ likepassives1.forEach(function(likepassive1, index) {
         dislikepassive1.style.display = "inline-block";
     });
 
-    starpassive1.addEventListener("click", function() {
-        this.style.display = "none";
-        staractive1.style.display = "inline-block";
-    });
-
-    staractive1.addEventListener("click", function() {
-        this.style.display = "none";
-        starpassive1.style.display = "inline-block";
-    });
 
 });
 

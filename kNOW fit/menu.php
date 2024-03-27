@@ -129,10 +129,6 @@
                         <?php echo $row1['dislikes']; ?>
                       </h2> 
                 </span>
-                <span class="content_span_mob">
-                  <img class="content_controls_mob star_passive_mob" src="imgs/star_passive.png" alt="like">
-                  <img class="content_controls_mob star_active_mob" src="imgs/star_active.png" alt="liked" style="display: none;">
-                </span>
               </div>
               </div>
               <?php
@@ -323,10 +319,6 @@
                       <h2 class="<?php echo $row1['id'];?>_dlk">
                         <?php echo $row1['dislikes']; ?>
                       </h2> 
-                    </span>
-                    <span class="content_span">
-                      <img class="content_controls star_passive_des" src="imgs/star_passive.png" alt="like">
-                      <img class="content_controls star_active_des" src="imgs/star_active.png" alt="liked" style="display: none;">
                     </span>
                   </div>
                 </div>
