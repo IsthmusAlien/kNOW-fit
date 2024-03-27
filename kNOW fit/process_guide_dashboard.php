@@ -118,7 +118,7 @@ if ((int)$_FILES["post_image"]["error"] != 4) {
 
       if(move_uploaded_file($_FILES["post_image"]["tmp_name"], $uploadFile)) {
 
-        header("Location: http://localhost/kNOW-fit/kNOW%20fit/guide_dashboard.php", true, 301);  
+        header("Location: guide_dashboard.php", true, 301);  
         exit(); 
 
       } else {
@@ -136,7 +136,7 @@ if ((int)$_FILES["post_image"]["error"] != 4) {
   
 } else {
 
-  header("Location: http://localhost/kNOW-fit/kNOW%20fit/guide_dashboard.php", true, 301);  
+  header("Location: guide_dashboard.php", true, 301);  
   exit(); 
 
 }
