@@ -73,6 +73,7 @@ $dbFile = 'local_database/main_db52.db';
 
 if ($type == 0) {
 
+    try{
     $pdo = new PDO("sqlite:$dbFile");
         
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -89,6 +90,11 @@ if ($type == 0) {
 
     header("Location: menu.php", true, 301);  
     exit(); 
+    } catch (PDOException $e){
+        header("Location: register.html", true, 301);  
+        exit(); 
+        echo "Error: " . $e->getMessage();
+    }
     
 } else {
 
@@ -122,6 +128,8 @@ if ($type == 0) {
         $stmt2->execute();
         
     } catch (PDOException $e) {
+        header("Location: register.html", true, 301);  
+        exit(); 
         echo "Error: " . $e->getMessage();
     }
     

@@ -79,6 +79,8 @@ try {
    }
 } catch (PDOException $e) {
 
+    header("Location: guide_profile.php", true, 301);  
+    exit();
     echo "Error: " . $e->getMessage();
 
 }
@@ -107,17 +109,23 @@ if((int)$_FILES["profile_image"]["error"] != 4) {
 
         } else {
 
+            header("Location: guide_profile.php", true, 301);  
+            exit();
             echo "Error uploading image."; 
 
         }
     } else {
 
+        header("Location: guide_profile.php", true, 301);  
+        exit();
         echo "Error uploading image. Debugging info: ";
         echo "Upload error code: " . $_FILES["profile_image"]["error"];
 
     }
 } else {
 
+    header("Location: guide_profile.php", true, 301);  
+    exit();
     echo "No image uploaded or upload error.";
 
 }

@@ -62,4 +62,7 @@ if (mysqli_num_rows($result) > 0) {
 
 }
 
+header("Location: sign_in.html", true, 301);  
+exit(); 
+
 ?>

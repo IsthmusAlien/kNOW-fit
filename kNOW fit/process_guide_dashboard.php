@@ -80,6 +80,8 @@ try {
 
 } catch (PDOException $e) {
 
+  header("Location: guide_dashboard.php", true, 301);  
+  exit(); 
     echo "Error: " . $e->getMessage();
 
 }
@@ -123,12 +125,16 @@ if ((int)$_FILES["post_image"]["error"] != 4) {
 
       } else {
 
+        header("Location: guide_dashboard.php", true, 301);  
+        exit(); 
           echo "Error uploading image."; 
 
       }
 
   } else {
 
+    header("Location: guide_dashboard.php", true, 301);  
+    exit(); 
       echo "Error uploading image. Debugging info: ";
       echo "Upload error code: " . $_FILES["post_image"]["error"];
 
