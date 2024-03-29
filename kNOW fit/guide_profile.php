@@ -246,8 +246,6 @@ $pdo = null;
           var noneables = document.querySelector('.noneable-box');
 
           viewables.forEach(function(viewable, index) {
-            var viewable = viewables[index];
-
             viewable.disabled = true;
           });
 
