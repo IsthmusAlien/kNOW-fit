@@ -3,7 +3,7 @@ function init(){
 var btn2 = document.getElementById("sign_in_button");
 
 var intervalId = window.setInterval(function(){
-    checkUsernamePasswordValidity()
+    checkUsernamePasswordValidity();
 }, 500);  
 
 function disableClick(event) {
