@@ -23,9 +23,11 @@
             if (userData) {
                 try {
                     const userDataObj = JSON.parse(userData);
-                    const userRemember = parseInt(userDataObj.user_remember);
+                    const userRemember = parseInt(userDataObj.user_type);
                     if (userRemember == 1) {
-                        valid();
+                        valid(1);
+                    } else {
+                        valid(0);
                     }
                 } catch (error) {
                     console.error('Error parsing JSON:', error);
@@ -34,7 +36,7 @@
                 console.log('No user data found in the cookie.');
             }
             
-            function valid () {
+            function valid (type) {
                 var btn_mob = document.getElementById('valid_display_mob');
                 btn_mob.style.display = "none";
                 var btn_tab = document.getElementById('valid_display_tab');
@@ -51,12 +53,21 @@
                 var txt_des = document.getElementById('valid_text_des');
                 txt_des.innerText = "Home";
 
-                var link_mob = document.getElementById('valid_link_mob');
-                link_mob.href = "menu.php";
-                var link_tab = document.getElementById('valid_link_tab');
-                link_tab.href = "menu.php";
-                var link_des = document.getElementById('valid_link_des');
-                link_des.href = "menu.php";
+                if (type == 1) {
+                    var link_mob = document.getElementById('valid_link_mob');
+                    link_mob.href = "guide_dashboard.php";
+                    var link_tab = document.getElementById('valid_link_tab');
+                    link_tab.href = "guide_dashboard.php";
+                    var link_des = document.getElementById('valid_link_des');
+                    link_des.href = "guide_dashboard.php";
+                } else {
+                    var link_mob = document.getElementById('valid_link_mob');
+                    link_mob.href = "menu.php";
+                    var link_tab = document.getElementById('valid_link_tab');
+                    link_tab.href = "menu.php";
+                    var link_des = document.getElementById('valid_link_des');
+                    link_des.href = "menu.php";
+                }
             }
         });
     </script> 

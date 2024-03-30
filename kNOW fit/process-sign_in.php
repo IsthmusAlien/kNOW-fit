@@ -6,19 +6,6 @@ $username = $_POST["username"];
 $password = $_POST["password"];
 $remember = isset($_POST["remember"]) ? 1 : 0;
 
-if ($remember == 1) {
-    $data = array(
-        'user_id' => $username,
-        'user_remember' => $remember
-    );
-
-
-$json_data = json_encode($data);
-
-setcookie('userData', $json_data, time() + (86400 * 30), "/"); 
-
-}
-
 $_SESSION['username'] = $username;
 
 $host = "db4free.net";
@@ -45,6 +32,19 @@ if (mysqli_num_rows($result) > 0) {
         
         $conn->close();
         $redirect = (int)$row['type'];
+
+        if ($remember == 1) {
+            $data = array(
+                'user_id' => $username,
+                'user_type' => $redirect
+            );
+        
+        
+        $json_data = json_encode($data);
+        
+        setcookie('userData', $json_data, time() + (86400 * 30), "/", '.wuaze.com'); 
+        
+        }
 
         if ($redirect == 0) {
 

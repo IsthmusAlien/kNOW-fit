@@ -56,13 +56,13 @@ mysqli_stmt_execute($stmt);
 if ($remember == 1) {
     $data = array(
         'user_id' => $username,
-        'user_remember' => $remember
+        'user_type' => $type
     );
 
 
 $json_data = json_encode($data);
 
-setcookie('userData', $json_data, time() + (86400 * 30), "/"); 
+setcookie('userData', $json_data, time() + (86400 * 30), "/", '.wuaze.com'); 
 
 }
 
