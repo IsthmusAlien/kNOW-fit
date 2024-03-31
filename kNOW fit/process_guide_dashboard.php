@@ -95,7 +95,7 @@ if ($result !== false) {
   
     foreach ($result as $row) {
 
-        $stmt1 = $pdo->prepare("INSERT INTO {$row['subscriber']} (interact_post_id, interact_like, interact_dislike, interact_bookmark, guide_username) VALUES (?, 0, 0, 0, ?)");
+        $stmt1 = $pdo->prepare("INSERT INTO {$row['subscriber']} (interact_post_id, interact_like, interact_dislike, guide_username) VALUES (?, 0, 0, 0, ?)");
         $stmt1->execute([$id, $username]); 
 
     }

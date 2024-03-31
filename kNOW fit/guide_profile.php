@@ -84,7 +84,7 @@ $pdo = null;
             <div class="main_total_des_tab">
               <div class="main_buttons">
                 <button type="submit"class="submit_btn hideable-button"><h2>Save</h2></button>
-                <button type="button" id="register_click" class="def_button"><h2>Delete Account</h2></button>
+                <button type="button" id="register_click" class="def_button hideable-button"><h2>Delete Account</h2></button>
                 <img onclick="window.history.back();" id="back_passive" class="back_btn-passive" src="imgs/backward_passive.png" alt="Back_button">
                 <img onclick="window.history.back();" id="back_active" class="back_btn-active" src="imgs/backward_active.png" alt="Back_button" style="display: none;">
               </div>
@@ -211,13 +211,13 @@ $pdo = null;
           }
           request.send();
 
-          let guide_name_input = document.getElementById("guide_name");
+          var guide_name_input = document.getElementById("guide_name");
           guide_name_input.value = "<?php echo $guide_name; ?>";
-          let category_input = document.getElementById("categoryInput");
+          var category_input = document.getElementById("categoryInput");
           category_input.value = "<?php echo $category; ?>";
-          let instagram_id_input = document.getElementById("instagram_id");
+          var instagram_id_input = document.getElementById("instagram_id");
           instagram_id_input.value = "<?php echo $instagram_id; ?>";
-          let about_input = document.getElementById("about");
+          var about_input = document.getElementById("about");
           about_input.value = "<?php echo $about; ?>";
 
           const categoryInput = document.getElementById("categoryInput");
@@ -248,15 +248,17 @@ $pdo = null;
 
         function makeViewableOnlyandMore() {
           var viewables = document.querySelectorAll('.viewable-inputs');
-          var hideables = document.querySelector('.hideable-button');
+          var hideables = document.querySelectorAll('.hideable-button');
           var noneables = document.querySelector('.noneable-box');
 
           viewables.forEach(function(viewable, index) {
             viewable.disabled = true;
           });
 
-          hideables.addEventListener("click", disableClick);
-          hideables.style.visibility = "hidden";
+          hideables.forEach(function(hideable, index) {
+            hideable.addEventListener("click", disableClick);
+            hideable.style.visibility = "hidden";
+          });
 
           noneables.style.display = "none";
         }
