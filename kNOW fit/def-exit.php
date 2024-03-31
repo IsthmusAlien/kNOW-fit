@@ -2,9 +2,39 @@
 
 $dbFile = 'local_database/main_db52.db';
 
+function deleteDirectory($dir) {
+    if (!file_exists($dir)) {
+        return true;
+    }
+
+    if (!is_dir($dir)) {
+        return unlink($dir);
+    }
+
+    foreach (scandir($dir) as $item) {
+        if ($item == '.' || $item == '..') {
+            continue;
+        }
+
+        if (!deleteDirectory($dir . DIRECTORY_SEPARATOR . $item)) {
+            return false;
+        }
+    }
+
+    return rmdir($dir);
+}
+
 if (isset($_GET['user_guide'])) {
 
 $username=$_GET['user_guide'];
+
+$directoryPath = 'guidedata/'.$username; 
+
+if (deleteDirectory($directoryPath)) {
+    echo "Directory deleted successfully.";
+} else {
+    echo "Failed to delete the directory.";
+}
 
 $host = "db4free.net";
 $dbname = "main_db51";
