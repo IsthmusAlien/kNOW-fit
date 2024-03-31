@@ -81,8 +81,7 @@ if ($type == 0) {
     $stmt = $pdo->prepare("CREATE TABLE {$username} (
         interact_post_id	INTEGER,
         interact_like	INTEGER,
-        interact_dislike	INTEGER,
-        interact_bookmark	INTEGER,
+        interact_dislike    INTEGER,
         guide_username	TEXT
     )");
 

@@ -29,11 +29,11 @@ if(isset($_GET['username']) && isset($_GET['guide_username']) && isset($_GET['wo
             
             $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-            if ($result !== false && count($result) != 0) { 
+            if ($result !== false) { 
             
                 foreach ($result as $row) {
 
-                    $stmt1 = $pdo->prepare("INSERT INTO {$username} (interact_post_id, interact_like, interact_dislike, interact_bookmark, guide_username) VALUES (?, 0, 0, 0, ?)");
+                    $stmt1 = $pdo->prepare("INSERT INTO {$username} (interact_post_id, interact_like, interact_dislike, guide_username) VALUES (?, 0, 0, ?)");
                     $stmt1->execute([$row['id'], $guide_username]);
 
                 }
@@ -42,12 +42,12 @@ if(isset($_GET['username']) && isset($_GET['guide_username']) && isset($_GET['wo
         
     } else {
 
-        $stmt1 = $pdo->prepare("SELECT interact_post_id, interact_like, interact_dislike, interact_bookmark FROM {$username} WHERE guide_username = ?"); 
+        $stmt1 = $pdo->prepare("SELECT interact_post_id, interact_like, interact_dislike FROM {$username} WHERE guide_username = ?"); 
         $stmt1->execute([$guide_username]);
         
         $result = $stmt1->fetchAll(PDO::FETCH_ASSOC);       
 
-        if ($result !== false && count($result) != 0) { 
+        if ($result !== false) { 
         
             foreach ($result as $row) {
 

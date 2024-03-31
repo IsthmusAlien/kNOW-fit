@@ -28,7 +28,7 @@
       $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
       
-      $stmt2 = $pdo->prepare("SELECT interact_like,interact_dislike,interact_bookmark FROM {$username} WHERE interact_post_id = ?");
+      $stmt2 = $pdo->prepare("SELECT interact_like,interact_dislike FROM {$username} WHERE interact_post_id = ?");
       $stmt2->execute([$post_id]);
 
       $result = $stmt2->fetch();

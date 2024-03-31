@@ -140,6 +140,7 @@ main {
         border: 1px solid #8E8E8E;
         background-color: white;
         width: 12vw;
+        min-width: 180px;
         display: flex;
         align-items: center;
         flex-direction: column;
