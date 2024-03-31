@@ -30,7 +30,7 @@
 
     $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-    if ($result === false) {
+    if ($result !== false && $result === false) {
       echo json_encode(['error' => 'Failed to retrieve data']);
       $valid = 0;
     } else {
@@ -72,7 +72,7 @@
                 
                     $result1 = $stmt1->fetchAll(PDO::FETCH_ASSOC);
 
-                    if (count($result1) != 0) {
+                    if ($result1 !== false && count($result1) != 0) {
                       $CTvalid = 1;
                     }
                 
@@ -263,7 +263,7 @@
                 
                     $result1 = $stmt1->fetchAll(PDO::FETCH_ASSOC);
 
-                    if (count($result1) != 0) {
+                    if ($result1 !== false && count($result1) != 0) {
                       $CTvalid = 1;
                     }
                 
