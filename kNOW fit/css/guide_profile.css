@@ -106,12 +106,36 @@ main {
     margin-bottom: 1vh;
   }
 
+  .def_button:active h2 {
+    color: white;
+  }
+
+  .def_button:active{
+    background-color: black;
+  }
+
+  .def_button{
+    width: 37%;
+    min-width: 187px;
+    height: 70%;
+    margin-top: 2.5%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: 3%;
+    align-self: flex-start;
+    flex-shrink: 0;
+    border-radius: 15px;
+    border: 2px solid #8E8E8E;
+    background-color: white;
+  }
+
   .submit_btn{
     width: 20%;
     height: 70%;
     margin-top: 2.5%;
     align-self: flex-start;
-    margin-right: 70%;
     flex-shrink: 0;
     border-radius: 15px;
     border: 2px solid #8E8E8E;
@@ -119,6 +143,18 @@ main {
     display: flex;
     align-items: center;
     justify-content: center;
+  }
+
+  
+  .def_button h2{
+    margin: 0%;
+    padding: 0%;
+    font-family: "M Plus 1p", sans-serif;
+    font-weight: 800;
+    font-style: normal;
+    flex-shrink: 0;
+    color: black;
+    font-size: 150%;
   }
 
   .submit_btn h2{
@@ -132,7 +168,6 @@ main {
     font-size: 150%;
   }
 
-  
   .submit_btn:active h2 {
     color: white;
   }
@@ -154,9 +189,66 @@ main {
     scrollbar-width: none;  /* Firefox */
   }
 
+  .modal{
+    position: absolute;
+    z-index: 1;
+    padding-top: 11vh;
+    padding-right: 18vw;
+    margin-left: calc(70vw - 10px);
+    right: 0;
+    top: 0;
+    height: 77%;
+    overflow: hidden;
+    background-color: transparent;
+    pointer-events: none; 
+}
+
+.modal-content{
+    margin: auto;
+    padding: 0.5%;
+    flex-shrink: 0;
+    border-radius: 20px;
+    border: 1px solid #8E8E8E;
+    background-color: white;
+    width: 12%;
+    min-width: 120px;
+    max-width: 7vw;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    pointer-events: all; 
+}
+
 }
 
 @media only screen and (min-width: 720px){
+
+  .modal{
+    position: absolute;
+    z-index: 1;
+    padding-top: 18vh;
+    margin-right: 8.7vw;
+    right: 0;
+    top: 0;
+    height: 77%;
+    overflow: hidden;
+    background-color: transparent;
+    pointer-events: none; 
+}
+
+.modal-content{
+    margin: auto;
+    padding: 0.5%;
+    flex-shrink: 0;
+    border-radius: 25px;
+    border: 1px solid #8E8E8E;
+    background-color: white;
+    width: 10vw;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    pointer-events: all; 
+}
 
   .info{
     font-size: 2.2vh !important;
@@ -201,12 +293,55 @@ main {
     margin-bottom: 10px;
   }
 
+  .def_button h2{
+    margin: 0%;
+    padding: 0%;
+    font-family: "M Plus 1p", sans-serif;
+    font-weight: 800;
+    font-style: normal;
+    flex-shrink: 0;
+    color: black;
+    font-size: 175%;
+  }
+
+  .def_button:active h2 {
+    color: white;
+  }
+
+  .def_button:active{
+    background-color: black;
+  }
+
+  .def_button:hover h2 {
+    color: white;
+  }
+
+  .def_button:hover{
+    background-color: black;
+  }
+
+  .def_button{
+    width: 15%;
+    min-width: 213px;
+    height: 70%;
+    margin-top: 0.95%;
+    align-self: flex-start;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: 3%;
+    flex-shrink: 0;
+    border-radius: 15px;
+    border: 2px solid #8E8E8E;
+    background-color: white;
+  }
+
   .submit_btn{
     width: 8%;
     height: 70%;
     margin-top: 0.95%;
     align-self: flex-start;
-    margin-right: 70%;
     flex-shrink: 0;
     border-radius: 15px;
     border: 2px solid #8E8E8E;
@@ -373,3 +508,31 @@ main {
       transform: scale(1);
     }
   }
+
+  .modal-content a{
+    text-decoration: none;
+    color: black;
+    font-family: "M Plus 1p", sans-serif;
+    font-weight: 800;
+    font-style: normal;
+    flex-shrink: 0;
+    font-size:calc(11px + 0.5vw);
+}
+
+.modal-content a:active{
+    color: #7ed957;
+}
+
+.modal-content a:focus{
+    color: #7ed957;
+}
+
+.modal-content a:hover{
+    color: #7ed957;
+}
+
+.modal-content h3{
+    margin: 0%;
+    margin-top: 2%;
+    margin-bottom: 2%;
+}

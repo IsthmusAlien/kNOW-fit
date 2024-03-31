@@ -83,7 +83,8 @@ $pdo = null;
           <form action="process-guide_profile.php" method="post" enctype="multipart/form-data">
             <div class="main_total_des_tab">
               <div class="main_buttons">
-                <button class="submit_btn hideable-button"><h2>Save</h2></button>
+                <button type="submit"class="submit_btn hideable-button"><h2>Save</h2></button>
+                <button type="button" id="register_click" class="def_button"><h2>Delete Account</h2></button>
                 <img onclick="window.history.back();" id="back_passive" class="back_btn-passive" src="imgs/backward_passive.png" alt="Back_button">
                 <img onclick="window.history.back();" id="back_active" class="back_btn-active" src="imgs/backward_active.png" alt="Back_button" style="display: none;">
               </div>
@@ -120,6 +121,11 @@ $pdo = null;
             </div>
             </form>
         </main>
+        <div div id="modal" class="modal" style="display: none;">
+          <div class="modal-content">
+            <h3><a href="def-exit.php?user_guide=<?php echo $username; ?>">Confirm</a></h3>
+          </div>
+        </div>
   </body>
   <script>
 

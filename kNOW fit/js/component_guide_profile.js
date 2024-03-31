@@ -16,5 +16,21 @@ document.addEventListener("DOMContentLoaded", function() {
       }, 200);
     });
 
+var modal = document.getElementById("modal");
+var btn1 = document.getElementById("register_click");
+
+btn1.onclick = function() {
+
+  if (modal.style.display == "block") {
+
+    modal.style.display = "none";
+
+  } else {
+
+    modal.style.display = "block";
+
+  }
+}
+
   });
   

@@ -395,6 +395,7 @@
       <div class="modal-content">
         <h3><a href="search.php">Discover</a></h3>
         <h3><a href="exit.php">Logout</a></h3>
+        <h3><a href="def-exit.php?user_subscriber<?php echo $username?>">Delete Account</a></h3>
       </div>
     </div>
   </body>

@@ -8,6 +8,8 @@ if(isset($_GET['username']) && isset($_GET['guide_username']) && isset($_GET['wo
     $guide_username = $_GET['guide_username'];
     $work = $_GET['work'];
 
+    try {
+
     $pdo = new PDO("sqlite:$dbFile");
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
@@ -27,7 +29,7 @@ if(isset($_GET['username']) && isset($_GET['guide_username']) && isset($_GET['wo
             
             $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-            if ($result !== false) { 
+            if ($result !== false && count($result) != 0) { 
             
                 foreach ($result as $row) {
 
@@ -45,7 +47,7 @@ if(isset($_GET['username']) && isset($_GET['guide_username']) && isset($_GET['wo
         
         $result = $stmt1->fetchAll(PDO::FETCH_ASSOC);       
 
-        if ($result !== false) { 
+        if ($result !== false && count($result) != 0) { 
         
             foreach ($result as $row) {
 
@@ -72,6 +74,9 @@ if(isset($_GET['username']) && isset($_GET['guide_username']) && isset($_GET['wo
         $stmt1 = $pdo->prepare("DELETE FROM {$username} WHERE guide_username = ?"); 
         $stmt1->execute([$guide_username]);
 
+    }
+    } catch (PDOException $e) {
+        echo "Error: " . $e->getMessage();
     }
 
 } else {
