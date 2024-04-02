@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="css/sign_in.css">
     <link rel="icon" sizes="180x180" href="imgs/tab_logo.png" type="image/png"> 
   </head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <body>
     <div class="fitter">
         <main>
@@ -66,5 +67,26 @@
         </div>
     </div>
   </body>
+  <script>
+    $("input#username").on({
+    keydown: function(e) {
+        if (e.which === 32)
+        return false;
+    },
+    change: function() {
+        this.value = this.value.replace(/\s/g, "");
+    }
+    });
+
+    $("input#password").on({
+    keydown: function(e) {
+        if (e.which === 32)
+        return false;
+    },
+    change: function() {
+        this.value = this.value.replace(/\s/g, "");
+    }
+    });
+  </script>
   <script src="js/true_sign_in.js"></script> 
 </html>

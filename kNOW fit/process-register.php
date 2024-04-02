@@ -89,11 +89,13 @@ if ($type == 0) {
 
     header("Location: menu.php", true, 301);  
     exit(); 
+    
     } catch (PDOException $e){
         header("Location: register.html", true, 301);  
         exit(); 
         echo "Error: " . $e->getMessage();
     }
+
     
 } else {
 
@@ -125,6 +127,10 @@ if ($type == 0) {
         )");
     
         $stmt2->execute();
+
+        
+        header("Location: guide_profile.php", true, 301);  
+        exit(); 
         
     } catch (PDOException $e) {
         header("Location: register.html", true, 301);  
@@ -133,9 +139,6 @@ if ($type == 0) {
     }
     
     $pdo = null;
-
-    header("Location: guide_profile.php", true, 301);  
-    exit(); 
 } 
 
 ?>

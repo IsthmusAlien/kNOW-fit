@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="css/register.css">
     <link rel="icon" sizes="180x180" href="imgs/tab_logo.png" type="image/png"> 
   </head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <body>
     <div class="fitter">
         <main>
@@ -99,6 +100,37 @@
         </div>                
     </div>
   </body>
+  <script>
+    $("input#username").on({
+    keydown: function(e) {
+        if (e.which === 32)
+        return false;
+    },
+    change: function() {
+        this.value = this.value.replace(/\s/g, "");
+    }
+    });
+
+    $("input#password").on({
+    keydown: function(e) {
+        if (e.which === 32)
+        return false;
+    },
+    change: function() {
+        this.value = this.value.replace(/\s/g, "");
+    }
+    });
+
+    $("input#email").on({
+    keydown: function(e) {
+        if (e.which === 32)
+        return false;
+    },
+    change: function() {
+        this.value = this.value.replace(/\s/g, "");
+    }
+    });
+  </script>
   <script src="js/popup_register.js"></script>  
   <script src="js/checkbox_register.js"></script>  
   <script src="js/availibility_register.js"></script>
